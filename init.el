@@ -29,6 +29,7 @@
   (load-theme 'monokai t)
   )
 
+
 ;; global options
 (global-set-key (kbd "C-c o") 'avy-goto-word-1)
 (global-set-key (kbd "C-o") 'avy-goto-word-1)
