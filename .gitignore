@@ -1,5 +1,7 @@
 auto-save-list
 elpa/
+eshell/
+transient/
 init.el~
 .gitignore~
 .init.el.~undo-tree~
