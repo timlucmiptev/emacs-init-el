@@ -39,6 +39,7 @@
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 ;;(global-display-line-numbers-mode 1)
 
+; show recent files on startup
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
