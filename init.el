@@ -29,17 +29,17 @@
   (load-theme 'monokai t)
   )
 
-
 ;; global options
 (global-set-key (kbd "C-c o") 'avy-goto-word-1)
 (global-set-key (kbd "C-o") 'avy-goto-word-1)
+(global-set-key (kbd "C-c m") 'magit-status)
 (global-undo-tree-mode)
 (global-set-key (kbd "C-c w") 'backward-kill-word)
 (tool-bar-mode -1)
 (setq column-number-mode t)
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 ;;(global-display-line-numbers-mode 1)
-
+ 
 ; show recent files on startup
 (require 'recentf)
 (recentf-mode 1)
