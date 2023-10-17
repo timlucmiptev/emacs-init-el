@@ -9,10 +9,6 @@
 (eval-when-compile
   (require 'use-package))
 
-(use-package paredit
-  :ensure t
-  )
-
 (use-package clojure-mode
   :ensure t ;; Automatically install the package from repositories
   :config
@@ -20,10 +16,34 @@
   (add-hook 'clojure-mode-hook 'subword-mode)
   )
 
+(use-package helm
+  :ensure t
+  :config
+  (helm-mode 1)
+  (global-set-key (kbd "C-x C-f") 'helm-find-files)
+  )
+
+(use-package monokai-theme
+  :ensure t
+  :config
+  (load-theme 'monokai t)
+  )
+
 ;; global options
-(global-set-key (kbd "C-o") 'avy-goto-char)
+(global-set-key (kbd "C-c o") 'avy-goto-word-1)
+(global-set-key (kbd "C-o") 'avy-goto-word-1)
 (global-undo-tree-mode)
 (global-set-key (kbd "C-c w") 'backward-kill-word)
+(tool-bar-mode -1)
+(setq column-number-mode t)
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+;;(global-display-line-numbers-mode 1)
+
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(setq inhibit-startup-screen t)
+(add-hook 'after-init-hook 'recentf-open-files)
 
 
 (custom-set-variables
@@ -31,7 +51,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(undo-tree paredit clojure-mode avy)))
+ '(package-selected-packages
+   '(cider monokai-theme helm undo-tree paredit clojure-mode avy)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

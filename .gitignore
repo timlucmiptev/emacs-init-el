@@ -4,3 +4,6 @@ init.el~
 .gitignore~
 .init.el.~undo-tree~
 ..gitignore.~undo-tree~
+*init.el#
+.#init.el
+recentf
